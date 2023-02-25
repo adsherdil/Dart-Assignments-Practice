@@ -1,0 +1,14 @@
+import 'dart:io';
+import 'dart:math';
+
+void main() {
+   stdout.write('Enter your radius:');
+   double radius = double.parse(stdin.readLineSync()!);
+
+   double volume = (4/3) * pi * pow(radius, 3);
+   num surfaceArea = 4 * pi * pow(radius, 2);
+
+   print("Sphere with radius $radius:");
+   print("Volume: $volume");
+   print("Surface Area: $surfaceArea");
+ }
