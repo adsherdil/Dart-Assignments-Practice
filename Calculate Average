@@ -1,0 +1,9 @@
+import 'dart:io';
+ void main() {
+   stdout.write('Enter your num1:');
+   double num1 = double.parse(stdin.readLineSync()!);
+   stdout.write('Enter your num2:');
+   double num2 = double.parse(stdin.readLineSync()!);
+   double average = (num1 + num2) / 2;
+   print('average is $average');
+ }
