@@ -1,0 +1,19 @@
+//Write a function that gets an array and return largest number of the array.
+Example
+Input: [2,3,4,1,6,4,2,1]
+Output: 6
+
+int largestElement(List<int> arr) {
+  int largest = arr[1];
+  for (int i = 1; i < arr.length; i++) {
+    if (arr[i] > largest) {
+      largest = arr[i];
+    }
+  }
+  return largest;
+}
+void main() {
+  List<int> arr = [2, 3, 4, 1, 6, 4, 2, 1];
+  int largest = largestElement(arr);
+  print(largest);
+}
