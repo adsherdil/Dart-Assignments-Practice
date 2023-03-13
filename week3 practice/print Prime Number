@@ -1,0 +1,28 @@
+//Write a program that takes a positive integer as input and prints out all prime numbers up to and including that integer.
+import 'dart:io';
+
+bool isPrime(int n) {
+  if (n <= 1) {
+    return false;
+  }
+
+  for (int i = 2; i <= n / 2; i++) {
+    if (n % i == 0) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+void main() {
+  stdout.write('Enter a positive integer: ');
+  int n = int.parse(stdin.readLineSync()!);
+
+  print('Prime numbers up to $n:');
+  for (int i = 2; i <= n; i++) {
+    if (isPrime(i)) {
+      print(i);
+    }
+  }
+}
