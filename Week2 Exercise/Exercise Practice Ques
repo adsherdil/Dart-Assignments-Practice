@@ -1,0 +1,781 @@
+// Write a program to check if a number is positive, negative or zero.
+void main() {
+  int number = 2;
+
+  if (number > 0) {
+    print("$number is positive");
+  } else if (number < 0) {
+    print("$number is negative");
+  } else {
+    print("$number is zero");
+  }
+}
+
+// Write a program to check if a number is odd or even.
+void main() {
+  int number = 5;
+
+  if (number % 2 == 0) {
+    print("$number is even");
+  } else {
+    print("$number is odd");
+  }
+}
+
+//Write a program to check if a year is leap year or not.
+void main() {
+  int year = 2028;
+
+  if (year % 4 == 0) {
+    if (year % 100 == 0) {
+      if (year % 400 == 0) {
+        print("$year is a leap year");
+      } else {
+        print("$year is not a leap year");
+      }
+    } else {
+      print("$year is a leap year");
+    }
+  } else {
+    print("$year is not a leap year");
+  }
+}
+
+//Write a program to check if a character is alphabet or not.
+void main() {
+  String c = 'a'; // character to be checked
+
+  if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {
+    print('$c is an alphabet');
+  } else {
+    print('$c is not an alphabet');
+  }
+}
+
+
+import 'dart:io';
+void main() {
+  print('Enter a character: ');
+  String c = stdin.readLineSync()!; // read user input
+
+  if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {
+    print('$c is an alphabet');
+  } else {
+    print('$c is not an alphabet');
+  }
+}
+
+////Write a program to input any alphabet and check whether it is vowel or consonant.
+import 'dart:io';
+
+void main() {
+  print('Enter an alphabet:');
+  String alphabet = stdin.readLineSync()!;
+
+  if (alphabet == 'a' || alphabet == 'e' || alphabet == 'i' || alphabet == 'o' || alphabet == 'u') {
+    print('$alphabet is a vowel');
+  } else {
+    print('$alphabet is a consonant');
+  }
+}
+
+// Write a program to input any character and check whether it is alphabet, digit or special character.
+import 'dart:io';
+void main() {
+  stdout.write("Enter any character: ");
+  String character = stdin.readLineSync()!;
+  RegExp alphabetPattern = RegExp(r'[a-zA-Z]');
+  RegExp digitPattern = RegExp(r'[0-9]');
+
+  if (alphabetPattern.hasMatch(character)) {
+    print("$character is an alphabet.");
+  } else if (digitPattern.hasMatch(character)) {
+    print("$character is a digit.");
+  } else {
+    print("$character is a special character.");
+  }
+}
+
+//Write a program to check whether a character is uppercase or lowercase alphabet.
+import 'dart:io';
+main() {
+  print("Enter a string : ");
+  var str = stdin.readLineSync();
+
+  if (str![0].toUpperCase() == str[0]) {
+    print("The first character is uppercase");
+  } else {
+    print("The first character is not uppercase");
+  }
+}
+
+Write a program to input week number and print week day.
+import 'dart:io';
+void main() {
+  print("Enter week number (1-7): ");
+  int weekNumber = int.parse(stdin.readLineSync()!);
+  String weekDay = "";
+
+  switch (weekNumber) {
+    case 1:
+      weekDay = "Monday";
+      break;
+    case 2:
+      weekDay = "Tuesday";
+      break;
+    case 3:
+      weekDay = "Wednesday";
+      break;
+    case 4:
+      weekDay = "Thursday";
+      break;
+    case 5:
+      weekDay = "Friday";
+      break;
+    case 6:
+      weekDay = "Saturday";
+      break;
+    case 7:
+      weekDay = "Sunday";
+      break;
+    default:
+      print("Invalid week number");
+      return;
+  }
+
+  print("The week day is $weekDay");
+}
+
+//Write a program to input month number and print number of days in that month.
+import 'dart:io';
+void main() {
+  stdout.write('Enter the month number: ');
+  int month = int.parse(stdin.readLineSync()!);
+
+  if (month < 1 || month > 12) {
+    print('Invalid month number');
+  } else {
+    List<int> daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    int days = daysInMonth[month - 1];
+
+    if (month == 2) {
+      stdout.write('Enter the year: ');
+      int year = int.parse(stdin.readLineSync()!);
+
+      if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+        days = 29;
+      }
+    }
+
+    print('Number of days in month $month is $days');
+  }
+}
+
+//Write a program to input angles of a triangle and check whether triangle is valid or not.
+import 'dart:io';
+void main() {
+  stdout.write("Enter first angle: ");
+  int angle1 = int.parse(stdin.readLineSync()!);
+
+  stdout.write("Enter second angle: ");
+  int angle2 = int.parse(stdin.readLineSync()!);
+
+  stdout.write("Enter third angle: ");
+  int angle3 = int.parse(stdin.readLineSync()!);
+
+  if (angle1 + angle2 + angle3 == 180) {
+    print("Triangle is valid.");
+  } else {
+    print("Triangle is not valid.");
+  }
+}
+
+//Write a program to find all roots of a quadratic equation.
+import 'dart:math';
+void main() {
+
+  double a = 2;
+  double b = 5;
+  double c = 3;
+
+  double discriminant = pow(b, 2) - 4 * a * c;
+
+  if (discriminant > 0) {
+    double root1 = (-b + sqrt(discriminant)) / (2 * a);
+    double root2 = (-b - sqrt(discriminant)) / (2 * a);
+    print("The roots are $root1 and $root2");
+  } else if (discriminant == 0) {
+    double root = -b / (2 * a);
+    print("The root is $root");
+  } else {
+    print("The equation has no real roots");
+  }
+}
+
+//Write a program to input basic salary of an employee and calculate its Gross salary according to following:
+Basic Salary <= 10000 : HRA = 20%, DA = 80%
+Basic Salary <= 20000 : HRA = 25%, DA = 90%
+Basic Salary > 20000 : HRA = 30%, DA = 95%
+
+void main() {
+  double basicSalary = 15000;
+  double hra, da, grossSalary;
+
+  if (basicSalary <= 10000) {
+    hra = 0.2 * basicSalary;
+    da = 0.8 * basicSalary;
+  } else if (basicSalary <= 20000) {
+    hra = 0.25 * basicSalary;
+    da = 0.9 * basicSalary;
+  } else {
+    hra = 0.3 * basicSalary;
+    da = 0.95 * basicSalary;
+  }
+
+  grossSalary = basicSalary + hra + da;
+
+  print("Basic Salary: $basicSalary");
+  print("HRA: $hra");
+  print("DA: $da");
+  print("Gross Salary: $grossSalary");
+}
+
+void main() {
+  double basicSalary = 15000; // example value, can be changed
+  double grossSalary;
+
+  if (basicSalary <= 10000) {
+    grossSalary = basicSalary + (basicSalary * 0.2) + (basicSalary * 0.8);
+  } else if (basicSalary <= 20000) {
+    grossSalary = basicSalary + (basicSalary * 0.25) + (basicSalary * 0.9);
+  } else {
+    grossSalary = basicSalary + (basicSalary * 0.3) + (basicSalary * 0.95);
+  }
+
+  print('Basic Salary: $basicSalary');
+  print('Gross Salary: $grossSalary');
+}
+
+import 'dart:io';
+void main() {
+  double basicSalary, grossSalary, hra, da;
+
+  // Input basic salary
+  print('Enter the basic salary:');
+  basicSalary = double.parse(stdin.readLineSync()!);
+
+  // Calculate gross salary based on basic salary
+  if (basicSalary <= 10000) {
+    hra = 0.2 * basicSalary;
+    da = 0.8 * basicSalary;
+  } else if (basicSalary <= 20000) {
+    hra = 0.25 * basicSalary;
+    da = 0.9 * basicSalary;
+  } else {
+    hra = 0.3 * basicSalary;
+    da = 0.95 * basicSalary;
+  }
+  grossSalary = basicSalary + hra + da;
+
+  // Output gross salary
+  print('Gross Salary: $grossSalary');
+}
+
+//Write a program to input electricity unit charges and calculate total electricity bill according to the given condition:
+For first 50 units Rs. 0.50/unit
+For next 100 units Rs. 0.75/unit
+For next 100 units Rs. 1.20/unit
+For unit above 250 Rs. 1.50/unit
+An additional surcharge of 20% is added to the bill
+
+void main() {
+  int unit = 300;
+  double totalBill, surcharge = 0.2;
+
+  if (unit <= 50) {
+    totalBill = unit * 0.5;
+  } else if (unit <= 150) {
+    totalBill = 50 * 0.5 + (unit - 50) * 0.75;
+  } else if (unit <= 250) {
+    totalBill = 50 * 0.5 + 100 * 0.75 + (unit - 150) * 1.2;
+  } else {
+    totalBill = 50 * 0.5 + 100 * 0.75 + 100 * 1.2 + (unit - 250) * 1.5;
+  }
+
+  totalBill += totalBill * surcharge;
+
+  print("Units Consumed: $unit");
+  print("Total Bill Amount (including surcharge): $totalBill");
+}
+
+import 'dart:io';
+
+void main() {
+  double units = 0.0;
+  double billAmount = 0.0;
+  double surcharge = 0.0;
+
+  // Taking input of number of units consumed
+  print("Enter the number of units consumed:");
+  units = double.parse(stdin.readLineSync()!);
+
+  // Calculating electricity bill
+  if (units <= 50) {
+    billAmount = units * 0.50;
+  } else if (units > 50 && units <= 150) {
+    billAmount = 25 + ((units - 50) * 0.75);
+  } else if (units > 150 && units <= 250) {
+    billAmount = 100 + ((units - 150) * 1.20);
+  } else {
+    billAmount = 220 + ((units - 250) * 1.50);
+  }
+
+  // Adding surcharge of 20% to the bill
+  surcharge = billAmount * 0.20;
+  billAmount += surcharge;
+
+  // Displaying the final bill amount
+  print("Electricity bill = Rs. $billAmount");
+}
+
+import 'dart:io';
+void main() {
+  double unitCharges, totalBill;
+
+  print("Enter the electricity unit charges: ");
+  unitCharges = double.parse(stdin.readLineSync()!);
+
+  if (unitCharges <= 50) {
+    totalBill = unitCharges * 0.50;
+  } else if (unitCharges <= 150) {
+    totalBill = (50 * 0.50) + ((unitCharges - 50) * 0.75);
+  } else if (unitCharges <= 250) {
+    totalBill = (50 * 0.50) + (100 * 0.75) + ((unitCharges - 150) * 1.20);
+  } else {
+    totalBill = (50 * 0.50) + (100 * 0.75) + (100 * 1.20) + ((unitCharges - 250) * 1.50);
+  }
+
+  totalBill += totalBill * 0.20; // Adding 20% surcharge
+
+  print("Total electricity bill: Rs. $totalBill");
+}
+
+//Write a program to input any character and check whether it is alphabet, digit or special character using switch case.
+import 'dart:io';
+void main() {
+  print('Enter any character: ');
+  var ch = stdin.readLineSync()!.toLowerCase();
+
+  switch (ch) {
+    case '0':
+    case '1':
+    case '2':
+    case '3':
+    case '4':
+    case '5':
+    case '6':
+    case '7':
+    case '8':
+    case '9':
+      print('$ch is a digit');
+      break;
+    case 'a':
+    case 'e':
+    case 'i':
+    case 'o':
+    case 'u':
+    case 'b':
+    case 'c':
+    case 'd':
+    case 'f':
+    case 'g':
+    case 'h':
+    case 'j':
+    case 'k':
+    case 'l':
+    case 'm':
+    case 'n':
+    case 'p':
+    case 'q':
+    case 'r':
+    case 's':
+    case 't':
+    case 'v':
+    case 'w':
+    case 'x':
+    case 'y':
+    case 'z':
+      print('$ch is an alphabet');
+      break;
+    default:
+      print('$ch is a special character');
+  }
+}
+
+//Write a program to input week number and print week day using switch case.
+import 'dart:io';
+
+void main() {
+  stdout.write('Enter week number (1-7): ');
+  int weekNumber = int.parse(stdin.readLineSync()!);
+
+  switch (weekNumber) {
+    case 1:
+      print('Monday');
+      break;
+    case 2:
+      print('Tuesday');
+      break;
+    case 3:
+      print('Wednesday');
+      break;
+    case 4:
+      print('Thursday');
+      break;
+    case 5:
+      print('Friday');
+      break;
+    case 6:
+      print('Saturday');
+      break;
+    case 7:
+      print('Sunday');
+      break;
+    default:
+      print('Invalid week number!');
+  }
+}
+
+//Write a program to input month number and print number of days in that month using switch case.
+import 'dart:io';
+void main() {
+  int monthNum;
+
+  // Input month number
+  stdout.write("Enter month number (1-12): ");
+  monthNum = int.parse(stdin.readLineSync()!);
+
+  // Switch case to calculate number of days in the month
+  switch (monthNum) {
+    case 1: // January
+    case 3: // March
+    case 5: // May
+    case 7: // July
+    case 8: // August
+    case 10: // October
+    case 12: // December
+      print("Number of days in month: 31");
+      break;
+    case 4: // April
+    case 6: // June
+    case 9: // September
+    case 11: // November
+      print("Number of days in month: 30");
+      break;
+    case 2: // February
+      int year;
+      stdout.write("Enter year: ");
+      year = int.parse(stdin.readLineSync()!);
+
+      if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+        print("Number of days in month: 29");
+      } else {
+        print("Number of days in month: 28");
+      }
+      break;
+    default:
+      print("Invalid month number.");
+  }
+}
+
+import 'dart:io';
+
+void main() {
+  print("Enter month number:");
+  int month = int.parse(stdin.readLineSync()!);
+
+  int days;
+
+  switch (month) {
+    case 1:
+      days = 31;
+      break;
+    case 2:
+      days = 28;
+      break;
+    case 3:
+      days = 31;
+      break;
+    case 4:
+      days = 30;
+      break;
+    case 5:
+      days = 31;
+      break;
+    case 6:
+      days = 30;
+      break;
+    case 7:
+      days = 31;
+      break;
+    case 8:
+      days = 31;
+      break;
+    case 9:
+      days = 30;
+      break;
+    case 10:
+      days = 31;
+      break;
+    case 11:
+      days = 30;
+      break;
+    case 12:
+      days = 31;
+      break;
+    default:
+      print("Invalid month number");
+      return;
+  }
+
+  print("Number of days in month $month is $days");
+}
+
+//Write a program to find all roots of a quadratic equation using switch case.
+import 'dart:io';
+import 'dart:math';
+
+void main() {
+  double a, b, c, discriminant, root1, root2, realPart, imaginaryPart;
+  print("Enter coefficients a, b and c:");
+  a = double.parse(stdin.readLineSync()!);
+  b = double.parse(stdin.readLineSync()!);
+  c = double.parse(stdin.readLineSync()!);
+  discriminant = b * b - 4 * a * c;
+  switch (discriminant.compareTo(0)) {
+    case 1:
+      root1 = (-b + sqrt(discriminant)) / (2 * a);
+      root2 = (-b - sqrt(discriminant)) / (2 * a);
+      print("The equation has two distinct real roots: $root1 and $root2");
+      break;
+    case 0:
+      root1 = -b / (2 * a);
+      print("The equation has one real root: $root1");
+      break;
+    case -1:
+      realPart = -b / (2 * a);
+      imaginaryPart = sqrt(-discriminant) / (2 * a);
+      print(
+          "The equation has two complex roots: $realPart + ${imaginaryPart}i and $realPart - ${imaginaryPart}i");
+      break;
+  }
+}
+
+//Write a program to input any alphabet and check whether it is vowel or consonant using switch case.
+import 'dart:io';
+void main() {
+  print('Enter an alphabet: ');
+  String alphabet = stdin.readLineSync()!;
+
+  switch (alphabet) {
+    case 'a':
+    case 'e':
+    case 'i':
+    case 'o':
+    case 'u':
+      print('$alphabet is a vowel');
+      break;
+    default:
+      print('$alphabet is a consonant');
+  }
+}
+
+//Write a program to input any character and check whether it is alphabet, digit or special character using if else.
+import 'dart:io';
+void main() {
+  print("Enter a character: ");
+  String input = stdin.readLineSync()!;
+  if (input.length == 1) {
+    var charCode = input.codeUnitAt(0);
+    if ((charCode >= 65 && charCode <= 90) || (charCode >= 97 && charCode <= 122)) {
+      print("$input is an alphabet.");
+    } else if (charCode >= 48 && charCode <= 57) {
+      print("$input is a digit.");
+    } else {
+      print("$input is a special character.");
+    }
+  } else {
+    print("Invalid input. Please enter a single character.");
+  }
+}
+
+//Write a program to input week number and print week day using if else.
+import 'dart:io';
+void main() {
+  int weekNumber;
+
+  stdout.write('Enter week number (1-7): ');
+  weekNumber = int.parse(stdin.readLineSync()!);
+
+  if (weekNumber == 1) {
+    print('Monday');
+  } else if (weekNumber == 2) {
+    print('Tuesday');
+  } else if (weekNumber == 3) {
+    print('Wednesday');
+  } else if (weekNumber == 4) {
+    print('Thursday');
+  } else if (weekNumber == 5) {
+    print('Friday');
+  } else if (weekNumber == 6) {
+    print('Saturday');
+  } else if (weekNumber == 7) {
+    print('Sunday');
+  } else {
+    print('Invalid input!');
+  }
+}
+
+//Write a program to input month number and print number of days in that month using if else.
+import 'dart:io';
+void main() {
+  int month;
+
+  stdout.write("Enter the month number (1-12): ");
+  month = int.parse(stdin.readLineSync()!);
+
+  if (month == 2) {
+    stdout.write("Enter the year: ");
+    int year = int.parse(stdin.readLineSync()!);
+    if (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) {
+      stdout.write("Number of days: 29");
+    } else {
+      stdout.write("Number of days: 28");
+    }
+  } else if (month == 4 || month == 6 || month == 9 || month == 11) {
+    stdout.write("Number of days: 30");
+  } else {
+    stdout.write("Number of days: 31");
+  }
+}
+
+import 'dart:io';
+void main() {
+  print("Enter the month number (1-12): ");
+  int month = int.parse(stdin.readLineSync()!);
+
+  int days;
+
+  if (month == 2) {
+    print("Enter the year: ");
+    int year = int.parse(stdin.readLineSync()!);
+    days = (year % 4 == 0) ? 29 : 28;
+  } else if (month == 4 || month == 6 || month == 9 || month == 11) {
+    days = 30;
+  } else {
+    days = 31;
+  }
+
+  print("Number of days in month $month is: $days");
+}
+
+//Write a program to find all roots of a quadratic equation using if else.
+import 'dart:math';
+void main() {
+  double a = 2, b = 3, c = -5;
+  double discriminant = pow(b, 2) - 4 * a * c;
+
+  if (discriminant > 0) {
+    double root1 = (-b + sqrt(discriminant)) / (2 * a);
+    double root2 = (-b - sqrt(discriminant)) / (2 * a);
+    print('The roots are $root1 and $root2');
+  } else if (discriminant == 0) {
+    double root = -b / (2 * a);
+    print('The root is $root');
+  } else {
+    print('The equation has no real roots');
+  }
+}
+
+import 'dart:math';
+void main() {
+  double a = 2, b = 5, c = 2; // sample coefficients
+  double discriminant = pow(b, 2) - 4 * a * c;
+
+  if (discriminant > 0) {
+    // Two distinct real roots
+    double root1 = (-b + sqrt(discriminant)) / (2 * a);
+    double root2 = (-b - sqrt(discriminant)) / (2 * a);
+    print("The roots are $root1 and $root2");
+  } else if (discriminant == 0) {
+    // One repeated real root
+    double root = -b / (2 * a);
+    print("The root is $root");
+  } else {
+    // Two complex roots
+    double realPart = -b / (2 * a);
+    double imaginaryPart = sqrt(-discriminant) / (2 * a);
+    print("The roots are $realPart + ${imaginaryPart}i and $realPart - ${imaginaryPart}i");
+  }
+}
+
+//Write a program to input any alphabet and check whether it is vowel or consonant using if else.
+import 'dart:io';
+void main() {
+  print("Enter an alphabet: ");
+  String alphabet = stdin.readLineSync()!;
+
+  if (alphabet == 'a' || alphabet == 'e' || alphabet == 'i' || alphabet == 'o' || alphabet == 'u' ||
+      alphabet == 'A' || alphabet == 'E' || alphabet == 'I' || alphabet == 'O' || alphabet == 'U') {
+    print("$alphabet is a vowel");
+  } else {
+    print("$alphabet is a consonant");
+  }
+}
+
+import 'dart:io';
+void main() {
+  stdout.write("Enter a character: ");
+  String char = stdin.readLineSync()!; // input character from user
+  char = char.toLowerCase(); // convert to lowercase for simplicity
+
+  if (char == 'a' || char == 'e' || char == 'i' || char == 'o' || char == 'u') {
+    print("$char is a vowel.");
+  } else {
+    print("$char is a consonant.");
+  }
+}
+
+import 'dart:io';
+void main() {
+  stdout.write("Enter any character: ");
+  String input = stdin.readLineSync()!;
+
+  if ((input >= 'a' && input <= 'z') || (input >= 'A' && input <= 'Z')) {
+    print("$input is an alphabet.");
+  } else if (input >= '0' && input <= '9') {
+    print("$input is a digit.");
+  } else {
+    print("$input is a special character.");
+  }
+}
+
+//Write a program to input any character and check whether it is alphabet, digit or special character using nested if else.
+import 'dart:io';
+void main() {
+  print("Enter a character: ");
+  String input = stdin.readLineSync()!;
+
+  if (input.length != 1) {
+    print("Error: Please enter only one character.");
+  } else {
+    if (input.codeUnitAt(0) >= 48 && input.codeUnitAt(0) <= 57) {
+      print("Input is a digit.");
+    } else if ((input.codeUnitAt(0) >= 65 && input.codeUnitAt(0) <= 90) ||
+        (input.codeUnitAt(0) >= 97 && input.codeUnitAt(0) <= 122)) {
+      print("Input is an alphabet.");
+    } else {
+      print("Input is a special character.");
+    }
+  }
+}
