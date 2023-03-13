@@ -1,0 +1,8 @@
+//Write a program that takes a string as input and reverses the order of the words in the string. For example, if the input is "Hello World", the output should be "World Hello".
+
+void main() {
+  String input = 'Hello World';
+  List<String> words = input.split(' ');
+  String output = words.reversed.join(' ');
+  print(output);
+}
