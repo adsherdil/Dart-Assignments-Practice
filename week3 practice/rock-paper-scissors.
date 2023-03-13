@@ -1,0 +1,25 @@
+import 'dart:io';
+import 'dart:math';
+
+void main() {
+  var choices = ['rock', 'paper', 'scissors'];
+  var random = Random();
+
+  stdout.write('Choose rock, paper, or scissors: ');
+  var userChoice = stdin.readLineSync()!;
+
+  var computerChoice = choices[random.nextInt(choices.length)];
+
+  print('You chose $userChoice');
+  print('Computer chose $computerChoice');
+
+  if (userChoice == computerChoice) {
+    print('It\'s a tie!');
+  } else if ((userChoice == 'rock' && computerChoice == 'scissors') ||
+      (userChoice == 'paper' && computerChoice == 'rock') ||
+      (userChoice == 'scissors' && computerChoice == 'paper')) {
+    print('You win!');
+  } else {
+    print('Computer wins!');
+  }
+}
