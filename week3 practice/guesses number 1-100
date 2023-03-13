@@ -1,0 +1,24 @@
+//Write a program that generates a random number between 1 and 100 and asks the user to guess the number. The program should keep asking for guesses until the user correctly guesses the number.
+
+import 'dart:io';
+import 'dart:math';
+
+void main() {
+  Random random = Random();
+  int randomNumber = random.nextInt(100) + 1;
+
+  while (true) {
+    print('Guess a number between 1 and 100:');
+    String? guessString = stdin.readLineSync();
+    int? guess = int.parse(guessString!);
+
+    if (guess == randomNumber) {
+      print('Congratulations, you guessed the number!');
+      break;
+    } else if (guess< randomNumber) {
+      print('Too low, try again.');
+    } else {
+      print('Too high, try again.');
+    }
+  }
+}
