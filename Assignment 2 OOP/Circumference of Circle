@@ -1,0 +1,25 @@
+class Circle {
+  double _radius;
+
+  Circle(this._radius);
+
+  double get radius => _radius;
+
+  set radius(double value) {
+    if (value <= 0) {
+      throw ArgumentError('Radius must be positive.');
+    }
+    _radius = value;
+  }
+
+  double getCircumference() {
+    return 2 * _radius * 3.14159;
+  }
+}
+void main(){
+var myCircle = Circle(8.6);
+print(myCircle.radius);
+
+myCircle.radius = 12.3;
+print(myCircle.getCircumference());
+}
