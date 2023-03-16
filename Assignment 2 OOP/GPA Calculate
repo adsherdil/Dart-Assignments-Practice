@@ -1,0 +1,26 @@
+class Student {
+  late String name;
+  late int age;
+  late String major;
+  late double gpa;
+
+  String getGradeLevel() {
+    int grade = age - 5;
+    return 'Grade $grade';
+  }
+}
+void main() {
+  Student student = Student();
+  student.name = 'Moon';
+  student.age = 21;
+  student.major = 'Software Engineer';
+  student.gpa = 3.2;
+
+  String gradeLevel = student.getGradeLevel();
+
+  print('Student: ${student.name}');
+  print('Age: ${student.age}');
+  print('Major: ${student.major}');
+  print('GPA: ${student.gpa}');
+  print('Grade level: $gradeLevel');
+}
