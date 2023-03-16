@@ -1,0 +1,40 @@
+class Course {
+  late String name;
+  late String code;
+  late String instructor;
+  late int credits;
+  late double costPerCredit;
+
+  String get title => title;
+  set title(String value) => title = value;
+
+  String get author => author;
+  set author(String value) => author = value;
+
+  String get publisher => publisher;
+  set publisher(String value) => publisher = value;
+
+  double get price => price;
+  set price(double value) => price = value;
+
+  num calculateTotalCost() {
+    return credits * costPerCredit;
+  }
+}
+void main() {
+  Course course = Course();
+  course.name = "Cloud Computing";
+  course.code = "CS-501";
+  course.instructor = "SHAHAB AHMED";
+  course.credits = 3;
+  course.costPerCredit = 250.0;
+
+  num totalCost = course.calculateTotalCost();
+
+  print("Course Name: ${course.name}");
+  print("Course Code: ${course.code}");
+  print("Instructor: ${course.instructor}");
+  print("Credits: ${course.credits}");
+  print("Cost Per Credit: ${course.costPerCredit}");
+  print("Total Cost: $totalCost");
+}
