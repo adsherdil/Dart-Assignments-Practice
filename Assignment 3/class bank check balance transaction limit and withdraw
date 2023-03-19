@@ -1,0 +1,41 @@
+Create a Vehicle class with brand, model, and year properties, and a method called drive() that prints a message indicating that the vehicle is being driven. Then create a Car class that inherits from Vehicle and has a numDoors property. Override the drive() method in the Car class to print a message that includes the number of doors.
+
+class BankAccount {
+  int balance;
+  String accountNumber;
+
+  BankAccount(this.balance, this.accountNumber);
+
+  void deposit(int amount) {
+    balance += amount;
+  }
+
+  void withdraw(int amount) {
+    balance -= amount;
+  }
+}
+
+class CheckingAccount extends BankAccount {
+  int transactionLimit;
+
+  CheckingAccount(int balance, String accountNumber, this.transactionLimit)
+      : super(balance, accountNumber);
+
+  @override
+  void withdraw(int amount) {
+    if (amount <= transactionLimit) {
+      super.withdraw(amount);
+    } else {
+      print("Transaction limit exceed.");
+    }
+  }
+}
+
+void main() {
+  var checkingAccount = CheckingAccount(1030, "786104229", 800);
+  print(checkingAccount.balance);
+  checkingAccount.withdraw(450);
+  print(checkingAccount.balance);
+  checkingAccount.withdraw(365);
+  print(checkingAccount.balance);
+}
